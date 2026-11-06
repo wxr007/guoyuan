@@ -1,140 +1,142 @@
 <div align="center">
 
-<img src="ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" width="120" alt="红果鉴图标">
+<img src="ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png" width="120" alt="Hongguo Jian icon">
 
-# 红果鉴 / 真果鉴
+# Hongguo Jian / Zhenguo Jian
 
-Flutter 多端独立短剧 / 影视应用，手机、平板、电脑和电视分别适配
+A standalone multi-platform Flutter app for short dramas and films, with dedicated layouts for phones, tablets, desktops and TVs
 
 [![Release](https://img.shields.io/github/v/release/Xanerix/guoapp?style=flat-square&color=3d4656)](../../releases)
 [![License](https://img.shields.io/badge/license-GPL--3.0-3d4656?style=flat-square)](LICENSE)
 ![Flutter](https://img.shields.io/badge/Flutter-3.47.9-02569B?style=flat-square&logo=flutter&logoColor=white)
 ![Platforms](https://img.shields.io/badge/platform-Android%20%7C%20iOS%20%7C%20Windows%20%7C%20macOS-8fa3bc?style=flat-square)
 
-[![交流群组](https://img.shields.io/badge/Telegram-交流群组-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/+c9YKHp7FjSk0MjI1)
-[![更新频道](https://img.shields.io/badge/Telegram-更新频道-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/+F9NnQSsMfOU3OTdl)
+[![Telegram Group](https://img.shields.io/badge/Telegram-Group-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/+c9YKHp7FjSk0MjI1)
+[![Telegram Channel](https://img.shields.io/badge/Telegram-Channel-26A5E4?style=flat-square&logo=telegram&logoColor=white)](https://t.me/+F9NnQSsMfOU3OTdl)
 
-[下载](#安装) · [功能](#功能) · [站源](#站源) · [隐私](#检查更新与使用统计) · [开发](#开发)
+[Download](#installation) · [Features](#features) · [Sources](#sources) · [Privacy](#update-checks-and-usage-stats) · [Development](#development)
+
+**English** | [简体中文](README-CN.md)
 
 </div>
 
 ---
 
-本项目改编自 [fish2018](https://github.com/fish2018) 的源码，分两个版本发布：
+This project is adapted from the source code of [fish2018](https://github.com/fish2018) and is released in two builds:
 
-| 版本 | 站源 | 安装包前缀 |
+| Build | Sources | Package prefix |
 | --- | --- | --- |
-| **红果鉴** | 只含红果站源 | `hongguojian-` |
-| **真果鉴** | 含全部站源，可在设置里逐个开关 | `zhenguojian-` |
+| **Hongguo Jian** (红果鉴) | Hongguo only | `hongguojian-` |
+| **Zhenguo Jian** (真果鉴) | All sources, each toggleable in Settings | `zhenguojian-` |
 
-## 功能
+## Features
 
-### 界面与外观
+### Interface and appearance
 
-- **导航**：发现 / 追剧 / 我的。手机用底栏，平板和电脑用侧栏（可收起），电视用顶部 Tab；宽屏的子页面在侧栏右侧打开。
-- **界面模式**：自动识别、电视、手机、平板、窗口（只有电脑提供）；手动选定后不随窗口宽度切换。电视模式强制横屏，手机模式锁定竖屏。
-- **主题**：跟随系统取色（Android 12+ 跟随壁纸，Windows 和 macOS 跟随强调色）或 6 个预设色板；浅色 / 深色 / 跟随系统。
+- **Navigation**: Discover / Watchlist / Me. Phones use a bottom bar, tablets and desktops use a collapsible side rail, and TVs use top tabs; on wide screens, sub-pages open to the right of the rail.
+- **UI mode**: Auto-detected, TV, phone, tablet or window (desktop only). A manually chosen mode no longer switches with window width. TV mode forces landscape; phone mode locks portrait.
+- **Theme**: System color extraction (Android 12+ follows the wallpaper, Windows and macOS follow the accent color) or 6 preset palettes; light / dark / follow system.
 
-### 浏览
+### Browsing
 
-- **发现**：站源名旁切换站源；分类 Tab 依次为推荐 / 全部 / 各榜单 / 各题材，榜单封面标出名次。第一个 Tab 顶部大卡片显示最近看过或推荐的剧。滑到底自动加载，下拉或「刷新」重新拉取当前分类。
-- **搜索**：只搜当前站源，保留最近搜索；红果有输入联想。
-- **详情**：封面模糊作底，显示集数、完结状态、分类、播放量、标签和简介；选集每组 30 集，落在续播那一集，看过的集变浅，VIP 集有标记。打开时后台预缓冲续播集。
+- **Discover**: Switch sources next to the source name. The category tabs are Recommended / All / each ranking / each genre, and ranking covers show their position. A large card at the top of the first tab shows the last-watched or recommended title. Scrolling to the bottom loads more; pull down or tap Refresh to reload the current category.
+- **Search**: Searches the current source only and keeps recent searches; Hongguo offers input suggestions.
+- **Details**: The cover is blurred as a backdrop, showing episode count, completion status, categories, play count, tags and synopsis. Episodes are grouped 30 per page and open at the resume episode; watched episodes are dimmed and VIP episodes are marked. The resume episode is pre-buffered in the background when the page opens.
 
-### 播放
+### Playback
 
-| 设备 | 体验 |
+| Device | Experience |
 | --- | --- |
-| 电脑 | 左边视频、右边选集栏，可宽屏、全屏；悬停弹出清晰度、倍速、音量；支持空格、Enter、方向键、M 等快捷键 |
-| 手机 | 竖屏短剧沉浸式，上下翻页切集，左右滑快进快退，长按画面打开「播放设置」，长按左侧 2 倍速，可锁定。横屏视频竖拿时视频在上、简介 / 选集在下，转横屏自动全屏；全屏双击两侧快退 / 快进，左半屏上下滑调亮度，右半屏调音量 |
-| 平板 | 横着拿同电脑，竖着拿同手机，全屏期间锁定横屏 |
-| 电视 | 播控浮在画面上，隐藏时左右键快退 / 快进 10 秒；返回键依次关闭选项、收起播控、退出；换集回详情页选 |
+| Desktop | Video on the left, episode list on the right; wide-screen and full-screen modes; hover for quality, speed and volume; supports Space, Enter, arrow keys, M and other shortcuts |
+| Phone | Immersive portrait short-drama playback; swipe up/down to change episodes, swipe left/right to seek, long-press the picture for playback settings, long-press the left side for 2x speed, and lock the screen. Landscape video held upright puts the video on top with synopsis / episodes below, and rotating to landscape goes full-screen automatically. In full-screen, double-tap either side to seek back / forward, swipe up/down on the left half for brightness and the right half for volume |
+| Tablet | Landscape behaves like desktop, portrait like phone; landscape is locked in full-screen |
+| TV | Controls float over the picture; when hidden, left / right seeks back / forward 10 seconds; Back closes options, then collapses the controls, then exits; episodes are changed from the details page |
 
-所有设备通用：下一集提前缓冲，翻页和连播直接接上；倍速、清晰度和弹幕开关会记住。红果在线播放有弹幕，本地播放不加载。
+Common to all devices: the next episode is pre-buffered so paging and autoplay continue seamlessly; speed, quality and the danmaku toggle are remembered. Danmaku is available for Hongguo online playback and is not loaded for local playback.
 
-### 追剧与记录
+### Watchlist and history
 
-- **追剧**：只分追 / 不追。有新集的剧排在「有更新」并标出更新集数；可搜索、按站源筛选、多选取消。后台每 30 分钟检查一批未完结的追剧。
-- **观看记录**：按今天 / 昨天 / 更早分段；可搜索、按站源筛选、多选删除，「清空」只清当前列出的记录。
-- **我的**：用户卡、最近观看、下载概况和设置入口；底栏 / 侧栏图标显示正在下载的集数。
+- **Watchlist**: A simple on / off list. Titles with new episodes are grouped under Updated and show how many episodes are new; search, filter by source, and deselect in bulk. Every 30 minutes the app checks a batch of unfinished watchlist titles in the background.
+- **History**: Grouped by Today / Yesterday / Earlier; search, filter by source, delete in bulk, and Clear removes only the records currently listed.
+- **Me**: User card, recently watched, download summary and a settings entry; bottom bar / side rail icons show how many episodes are downloading.
 
-### 下载
+### Downloads
 
-- 详情页「下载选集」或播放页选集栏多选（点选、拖选、全选）。
-- 下载页分「下载中」「已下载」，可单集或全部暂停 / 继续 / 重试；已下载按剧显示，可播放、删除、补齐缺集。
-- 每集下载完自动转成普通 mp4（红果先解密，m3u8 合成一个文件），保存为 `下载目录/剧名/第 N 集.mp4`，可以直接拷出使用。
-- 旧版下载的分集保持原样，旧版合并出的文件不再列出。电视端不提供下载。
+- Start from Download episodes on the details page, or multi-select in the episode list on the playback page (tap, drag, select all).
+- The download page splits into Downloading and Downloaded, with pause / resume / retry for a single episode or all of them. Downloaded titles are grouped by show and can be played, deleted or filled in for missing episodes.
+- Each episode is converted to a plain mp4 when the download finishes (Hongguo decrypts first and merges the m3u8 into one file) and saved as `download dir/show name/episode N.mp4`, ready to copy out and use.
+- Episodes downloaded by older versions stay as they are, and files merged by older versions are no longer listed. Downloads are not available on TV.
 
-### 设置、用户与备份
+### Settings, users and backup
 
-- **设置**：外观、播放、下载、站源、代理、用户、关于、诊断 8 组，改动立即保存；没有权限的项置灰并注明原因。
-- **用户**：多用户独立保存追剧、记录和搜索，轻点即切换；管理员可添加、编辑、删除用户，设置能访问的站源和是否允许下载。
-- **备份**：导出 / 恢复用户、追剧、观看记录和偏好设置（含主题色），已下载视频不受影响；旧版备份仍可导入。本地配置损坏时启动页可从备份恢复。
+- **Settings**: 8 groups — Appearance, Playback, Downloads, Sources, Proxy, Users, About, Diagnostics. Changes save immediately; items you lack permission for are greyed out with the reason.
+- **Users**: Each user keeps their own watchlist, history and searches, and switches with a tap. Administrators can add, edit and delete users, and decide which sources each user can access and whether downloads are allowed.
+- **Backup**: Export / restore users, watchlist, history and preferences (including theme colors); downloaded videos are unaffected. Backups from older versions can still be imported. If the local config is corrupted, the splash screen can restore from a backup.
 
 > [!NOTE]
-> 画中画、画质增强、排序与筛选、剧集长按菜单、红果多季切换暂不提供。
+> Picture-in-picture, quality enhancement, sorting and filtering, episode long-press menus, and Hongguo multi-season switching are not available yet.
 
-## 站源
+## Sources
 
-| 站源 | 内容 | 搜索 |
+| Source | Content | Search |
 | --- | --- | --- |
-| 红果 | 短剧、漫剧、AI 剧；推荐、榜单、题材 | 在线搜索，带输入联想 |
-| 韩小圈 | 韩剧、韩国电影、综艺、动漫，多线路 | 在线搜索 |
-| 鬼片 | 鬼片、电视剧、动漫，多线路 | 匹配站点 RSS 最新条目 |
-| 青空 | 番剧、剧场动画、特摄 | 在线搜索 |
-| 黄豆 | 精选短剧、榜单 | 只搜本机缓存 |
-| 剧果 | 分类短剧 | 在线搜索 |
-| 野果 | 分类短剧 | 在线搜索 |
-| 帝果 | 分类视频 | 在线搜索 |
-| 禁果短剧 | 推荐、热度、分类短剧 | 在线搜索 |
-| 禁果 | 精选、最新、分类短剧 | 在线搜索 |
-| 黄果视频 / 黄果 AI / 黄果旧版 | 列表、分类及分集 | 只搜本机缓存 |
+| Hongguo | Short dramas, comic dramas, AI dramas; recommendations, rankings, genres | Online search with input suggestions |
+| Hanxiaoquan | Korean dramas, Korean films, variety shows, anime, multiple lines | Online search |
+| Guipian | Ghost films, TV series, anime, multiple lines | Matches the latest items in the site RSS feed |
+| Qingkong | Anime series, theatrical anime, tokusatsu | Online search |
+| Huangdou | Curated short dramas, rankings | Local cache only |
+| Juguo | Short dramas by category | Online search |
+| Yeguo | Short dramas by category | Online search |
+| Diguo | Videos by category | Online search |
+| Jinguo Short Drama | Recommendations, trending, short dramas by category | Online search |
+| Jinguo | Featured, latest, short dramas by category | Online search |
+| Huangguo Video / Huangguo AI / Huangguo Legacy | Lists, categories and episodes | Local cache only |
 
-站源可用性、清晰度和区域限制取决于源站及网络；应用不解除源站 VIP 或其他授权限制。
+Source availability, quality and regional restrictions depend on the source sites and your network; the app does not bypass VIP or other authorization restrictions on those sites.
 
-## 安装
+## Installation
 
-在 [Releases](../../releases) 下载对应平台的包：`hongguojian-` 开头的是红果鉴，`zhenguojian-` 开头的是真果鉴。
+Download the package for your platform from [Releases](../../releases): packages starting with `hongguojian-` are Hongguo Jian, `zhenguojian-` are Zhenguo Jian.
 
-| 平台 | 安装包 |
+| Platform | Package |
 | --- | --- |
-| Android 7.0+ | arm64-v8a / armeabi-v7a / x86_64 三种 APK，按设备架构选择（大多数手机选 arm64-v8a）；同一签名可覆盖升级，旧证书版本需卸载重装 |
-| Windows 10/11 x64 | 完整 ZIP，解压后运行 `hongguojian.exe` / `zhenguojian.exe`，保留所有 DLL 与 `data` 目录 |
-| iOS 15.1+ | 未签名 IPA，需自行签名或用 iloader 等工具侧载 |
-| macOS 12+ | 通用 dmg（Apple 芯片与 Intel），打开后拖入「应用程序」；未经公证，首次打开前需解除隔离（见下方） |
+| Android 7.0+ | Three APKs — arm64-v8a / armeabi-v7a / x86_64 — pick the one matching your device architecture (most phones: arm64-v8a). Builds with the same signature upgrade in place; older builds signed with a different certificate require an uninstall first |
+| Windows 10/11 x64 | Full ZIP; unzip and run `hongguojian.exe` / `zhenguojian.exe`, keeping all DLLs and the `data` directory |
+| iOS 15.1+ | Unsigned IPA; sign it yourself or sideload with a tool such as iloader |
+| macOS 12+ | Universal dmg (Apple silicon and Intel); open and drag into Applications. Not notarized, so you must clear the quarantine flag before the first launch (see below) |
 
 > [!TIP]
-> Android 安装提示 `INSTALL_FAILED_NO_MATCHING_ABIS` 表示 APK 与设备架构不匹配，请换对应架构的安装包。
+> An `INSTALL_FAILED_NO_MATCHING_ABIS` error on Android means the APK does not match your device architecture; use the package for the matching ABI.
 
 > [!IMPORTANT]
-> macOS 首次打开前在终端执行（真果鉴把 `红果鉴.app` 换成 `真果鉴.app`）：
+> On macOS, run the following in Terminal before the first launch (for Zhenguo Jian, replace `红果鉴.app` with `真果鉴.app`):
 >
 > ```sh
 > xattr -dr com.apple.quarantine /Applications/红果鉴.app
 > ```
 
-## 检查更新与使用统计
+## Update checks and usage stats
 
-| 请求 | 发送内容 |
+| Request | What is sent |
 | --- | --- |
-| 检查更新 | 不发送任何数据，只读取最新版本号。启动时检查一次，有新版时每次启动都会提示，可选择忽略此版本或不再提醒 |
-| 匿名使用统计 | 只发送：首次统计时生成的随机编号（与设备、账号无关）、应用版本号、平台（Android / iOS / Windows / macOS）、红果鉴或真果鉴 |
+| Update check | No data is sent; only the latest version number is read. Checked once at startup; when a new version exists the prompt appears on every launch, with options to skip this version or stop being reminded |
+| Anonymous usage stats | Only: a random ID generated on first use (unrelated to device or account), app version, platform (Android / iOS / Windows / macOS), and whether it is Hongguo Jian or Zhenguo Jian |
 
-不发送观看记录、追剧、搜索、站源设置或其他任何个人数据，接收端代码见 [`worker/`](worker)。两项都可以在 **设置 › 关于** 分别关闭，关闭后应用不会再发出对应的请求。
+No history, watchlist, searches, source settings or any other personal data is sent. The receiving code is in [`worker/`](worker). Both can be turned off separately under **Settings › About**; once off, the app sends no corresponding requests.
 
-## 免责声明
+## Disclaimer
 
-- 本项目仅供个人学习与技术研究。
-- 本项目与红果短剧及其他各站源的运营方无任何关联，未获得其授权或认可；文中提到的名称和商标归各自权利人所有。
-- 应用本身不存储、不上传、不分发任何影视内容，所有内容均来自第三方站点，版权归原权利人所有；应用不解除源站 VIP 或其他授权限制。
-- 使用者应遵守所在地法律法规及各站点的服务条款，因使用本项目产生的一切后果由使用者自行承担。
-- 本项目按「现状」提供，不对可用性、稳定性或适用性作任何保证，作者不承担由此造成的任何直接或间接损失。
-- 如认为本项目侵犯了你的合法权益，请通过 Issue 联系，核实后会及时处理。
+- This project is intended for personal learning and technical research only.
+- This project is not affiliated with Hongguo Short Drama or the operators of any other source, and is neither authorized nor endorsed by them; the names and trademarks mentioned belong to their respective owners.
+- The app itself does not store, upload or distribute any video content. All content comes from third-party sites and remains the copyright of its original owners; the app does not bypass VIP or other authorization restrictions on those sites.
+- Users must comply with the laws and regulations of their jurisdiction and the terms of service of each site. Any consequences of using this project are borne by the user.
+- This project is provided "as is", without any warranty of availability, stability or fitness for purpose, and the author accepts no liability for any direct or indirect loss arising from its use.
+- If you believe this project infringes your lawful rights, please contact us via Issues and it will be handled promptly once verified.
 
-## 许可
+## License
 
-本项目以 [GNU GPL v3.0](https://www.gnu.org/licenses/gpl-3.0.html) 发布，全文见 [LICENSE](LICENSE)。第三方依赖遵循各自的许可证。
+This project is released under the [GNU GPL v3.0](https://www.gnu.org/licenses/gpl-3.0.html); the full text is in [LICENSE](LICENSE). Third-party dependencies follow their respective licenses.
 
-## 开发
+## Development
 
-构建、测试、架构和发布流程见 [DEVELOPMENT.md](DEVELOPMENT.md)，版本更新记录见 [CHANGELOG.md](CHANGELOG.md)。
+See [DEVELOPMENT.md](DEVELOPMENT.md) for build, test, architecture and release workflows, and [CHANGELOG.md](CHANGELOG.md) for the version history.

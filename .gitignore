@@ -38,6 +38,8 @@ venv/
 *.iml
 *.log
 .DS_Store
+
+.workbuddy/
 Thumbs.db
 desktop.ini
 
